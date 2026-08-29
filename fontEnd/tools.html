@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Tools</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS Base and Page Specific -->
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="tools.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="glowing-orb orb-1"></div>
+    <div class="glowing-orb orb-2"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation (Reused) -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <span class="logo-text">CyberShield</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-house nav-icon"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-virus-slash nav-icon"></i>
+                    <span>Threat Detector</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-file-shield nav-icon"></i>
+                    <span>File Scanner</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-unlock-keyhole nav-icon"></i>
+                    <span>Password Strength</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-chart-pie nav-icon"></i>
+                    <span>Reports</span>
+                </a>
+            </nav>
+
+            <div class="user-profile-sidebar" style="margin-top: auto;">
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Admin User</span>
+                    <span class="user-role">Superadmin</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <h1 class="page-title">Threat Analysis & Tools</h1>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge">1</span>
+                    </div>
+                    <div class="header-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tools Grid -->
+            <div class="tools-grid">
+                
+                <!-- Malware File Scanner Widget -->
+                <div class="widget scanner-widget">
+                    <h2 class="widget-title">Malware File Scanner</h2>
+                    <div class="scanner-content">
+                        <!-- Drop Zone -->
+                        <div class="drop-zone">
+                            <i class="fa-solid fa-cloud-arrow-up cloud-icon"></i>
+                            <span>Drop-zone</span>
+                        </div>
+                        
+                        <!-- Scanning Progress Area -->
+                        <div class="scan-area">
+                            <div class="file-icon-wrapper">
+                                <i class="fa-regular fa-file-pdf document-icon"></i>
+                                <div class="scan-beam"></div>
+                                <div class="shield-badge">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 68%;"></div>
+                                </div>
+                                <span class="progress-text">Analyzing... 68%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Strength Checker Widget -->
+                <div class="widget password-widget">
+                    <h2 class="widget-title">Password Strength Checker</h2>
+                    <div class="password-content">
+                        <div class="password-input-wrapper">
+                            <input type="password" value="CyberSec2026!#" class="password-input" readonly>
+                            <i class="fa-solid fa-eye-slash mask-icon"></i>
+                        </div>
+                        
+                        <div class="strength-meter-area">
+                            <!-- SVG Speedometer -->
+                            <div class="speedometer">
+                                <svg viewBox="0 0 100 50" class="gauge-svg">
+                                    <path class="gauge-bg" d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="15" stroke-linecap="butt"/>
+                                    
+                                    <!-- Colored segments -->
+                                    <!-- Red/Weak -->
+                                    <path class="gauge-segment weak" d="M 10 50 A 40 40 0 0 1 30 15" fill="none" stroke="#ff3d00" stroke-width="15" stroke-linecap="butt"/>
+                                    <!-- Orange/Medium -->
+                                    <path class="gauge-segment medium" d="M 30 15 A 40 40 0 0 1 70 15" fill="none" stroke="#ff9800" stroke-width="15" stroke-linecap="butt"/>
+                                    <!-- Green/Strong -->
+                                    <path class="gauge-segment strong" d="M 70 15 A 40 40 0 0 1 90 50" fill="none" stroke="#00e676" stroke-width="15" stroke-linecap="butt"/>
+                                    
+                                    <!-- Needle pointing to Green -->
+                                    <g class="needle" transform="translate(50, 50) rotate(55)">
+                                        <polygon points="-2,0 2,0 0,-35" fill="#ffffff"/>
+                                        <circle cx="0" cy="0" r="4" fill="#ffffff"/>
+                                    </g>
+                                </svg>
+                                <div class="strength-label">STRONG</div>
+                            </div>
+                            
+                            <div class="strength-details">
+                                <ul>
+                                    <li><span class="muted">Length:</span> 12</li>
+                                    <li><span class="muted">Entropy:</span> 85 bits</li>
+                                    <li class="suggestions-title">Suggestions:</li>
+                                    <li class="muted-li">• Add a symbol</li>
+                                    <li class="muted-li">• Avoid dictionary words</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phishing Detector & AI Chatbot Widget -->
+                <div class="widget chatbot-widget">
+                    <div class="widget-header">
+                        <h2 class="widget-title">Phishing Detector & AI Chatbot</h2>
+                        <button class="btn-more">More <i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                    
+                    <div class="chatbot-container">
+                        <!-- Bot Sidebar Identity -->
+                        <div class="chat-sidebar">
+                            <div class="bot-identity">
+                                <div class="bot-avatar"><i class="fa-solid fa-shield"></i></div>
+                                <div>
+                                    <div class="bot-name">CyberBot</div>
+                                    <div class="bot-role">AI Assistant</div>
+                                </div>
+                            </div>
+                            <div class="chat-menu">
+                                <div class="chat-menu-item"><i class="fa-regular fa-user"></i> User</div>
+                                <div class="chat-menu-item active"><i class="fa-regular fa-message"></i> Conversation</div>
+                            </div>
+                            <div class="chat-input-area">
+                                <input type="text" placeholder="Type a message...">
+                                <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Chat Area -->
+                        <div class="chat-area">
+                            <div class="chat-message user">
+                                <div class="message-bubble">Example URL: http://secure-login-updates.com/login</div>
+                                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                            </div>
+                            
+                            <div class="chat-message bot">
+                                <div class="avatar cb-avatar">CB</div>
+                                <div class="message-content">
+                                    <div class="message-bubble bot-bubble">
+                                        <span class="critical-text">CRITICAL:</span> Analyzing potential phishing link. Domain registered yesterday in an unexpected region. SSL certificate missing.<br>
+                                        <strong>DO NOT ENTER CREDENTIALS.</strong>
+                                    </div>
+                                    <div class="tag-buttons">
+                                        <span class="tag tag-danger"><i class="fa-solid fa-flag-usa"></i> Suspicious Domain TLD</span>
+                                        <span class="tag tag-warning"><i class="fa-solid fa-calendar-days"></i> Recent Registration</span>
+                                        <span class="tag tag-danger"><i class="fa-solid fa-lock-open"></i> No HTTPS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

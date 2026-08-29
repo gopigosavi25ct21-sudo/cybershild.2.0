@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Login</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="glowing-orb orb-1"></div>
+    <div class="glowing-orb orb-2"></div>
+    <div class="particles" id="particles-js"></div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-section">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <span class="logo-text">CyberShield</span>
+            </div>
+            
+            <h1 class="welcome-title">Welcome to CyberShield</h1>
+            <p class="subtitle">Please sign in to access your secure portal</p>
+            
+            <form class="login-form">
+                <div class="input-group">
+                    <i class="fa-regular fa-user input-icon"></i>
+                    <input type="text" id="username" placeholder="Username/Email" required>
+                    <label for="username">Username/Email</label>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <label for="password">Password</label>
+                </div>
+                
+                <button type="submit" class="login-btn">LOGIN</button>
+                
+                <div class="form-footer">
+                    <a href="#" class="footer-link">Forgot Password?</a>
+                    <a href="#" class="footer-link">Create Account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Particles.js for background matrix/network effect -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

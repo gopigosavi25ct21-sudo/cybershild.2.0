@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="glowing-orb orb-1"></div>
+    <div class="glowing-orb orb-2"></div>
+    <div class="glowing-orb orb-3"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <span class="logo-text">CyberShield</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-house nav-icon"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-virus-slash nav-icon"></i>
+                    <span>Threat Detector</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-file-shield nav-icon"></i>
+                    <span>File Scanner</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-unlock-keyhole nav-icon"></i>
+                    <span>Password Strength</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-chart-pie nav-icon"></i>
+                    <span>Reports</span>
+                </a>
+            </nav>
+
+            <div class="user-profile-sidebar">
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Admin User</span>
+                    <span class="user-role">Superadmin</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <h1 class="page-title">Security Dashboard</h1>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="header-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Widgets Grid -->
+            <div class="dashboard-grid">
+                
+                <!-- Status Widget -->
+                <div class="widget status-widget">
+                    <h2 class="widget-title">Overall System Status</h2>
+                    <div class="status-content">
+                        <div class="shield-container">
+                            <i class="fa-solid fa-shield-check shield-icon secure"></i>
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-ring delay"></div>
+                        </div>
+                        <h3 class="status-text">SECURE</h3>
+                        <p class="status-subtext">All systems operating normally</p>
+                    </div>
+                </div>
+
+                <!-- Network Traffic Widget -->
+                <div class="widget traffic-widget">
+                    <div class="widget-header">
+                        <h2 class="widget-title">Real-time Network Traffic</h2>
+                        <div class="widget-controls">
+                            <span class="badge-status">Status: Online</span>
+                            <select class="time-filter">
+                                <option>Last 24 Hours</option>
+                                <option>Last 7 Days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="traffic-content">
+                        <!-- We will generate the waveform bars via JS here -->
+                        <div class="waveform-container" id="waveformContainer"></div>
+                        
+                        <!-- Graph Axes/Labels -->
+                        <div class="y-axis">
+                            <span>120</span>
+                            <span>90</span>
+                            <span>60</span>
+                            <span>30</span>
+                            <span>0</span>
+                        </div>
+                        <div class="x-axis">
+                            <span>12:00</span>
+                            <span>13:00</span>
+                            <span>14:00</span>
+                            <span>15:00</span>
+                            <span>16:00</span>
+                            <span>17:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Traffic / Mini chart -->
+                <div class="widget mini-traffic-widget">
+                    <div class="widget-header">
+                        <h2 class="widget-title">Traffic Analysis</h2>
+                        <button class="btn-more">More <i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                    <div class="mini-waveform-container" id="miniWaveformContainer"></div>
+                    <div class="y-axis-mini">
+                        <span>150</span>
+                        <span>100</span>
+                        <span>50</span>
+                        <span>0</span>
+                    </div>
+                </div>
+
+                <!-- Security Alerts Widget -->
+                <div class="widget alerts-widget">
+                    <div class="widget-header">
+                        <h2 class="widget-title">Recent Security Alerts</h2>
+                        <button class="btn-more">More <i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                    <div class="alerts-list">
+                        <div class="alert-item">
+                            <div class="alert-icon warning"><i class="fa-solid fa-circle-exclamation"></i></div>
+                            <div class="alert-details">
+                                <span class="alert-time">12:59 AM</span>
+                                <span class="alert-desc">Active Security Alerts</span>
+                                <span class="alert-meta">2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <div class="alert-icon danger"><i class="fa-solid fa-circle-xmark"></i></div>
+                            <div class="alert-details">
+                                <span class="alert-time">12:58 AM</span>
+                                <span class="alert-desc">Unauthorized Access Attempt</span>
+                                <span class="alert-meta">2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <div class="alert-icon info"><i class="fa-solid fa-circle-info"></i></div>
+                            <div class="alert-details">
+                                <span class="alert-time">12:58 AM</span>
+                                <span class="alert-desc">System Update Completed</span>
+                                <span class="alert-meta">1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Threat Map Widget -->
+                <div class="widget map-widget">
+                    <h2 class="widget-title">Threat Map</h2>
+                    <div class="map-container">
+                        <!-- Simple SVG representation of world map dots -->
+                        <div class="world-map">
+                            <div class="map-node node-1"></div>
+                            <div class="map-node node-2"></div>
+                            <div class="map-node node-3"></div>
+                            <div class="map-node node-4"></div>
+                            <!-- Connection lines will be drawn in CSS -->
+                            <svg class="map-connections" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 20 40 Q 50 10 70 30" stroke="rgba(0,229,255,0.3)" fill="none" stroke-width="1"></path>
+                                <path d="M 20 40 Q 40 60 80 50" stroke="rgba(0,229,255,0.3)" fill="none" stroke-width="1"></path>
+                                <path d="M 70 30 Q 75 40 80 50" stroke="rgba(0,229,255,0.3)" fill="none" stroke-width="1"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom JS for interactions and chart generation -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
